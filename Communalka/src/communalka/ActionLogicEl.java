@@ -33,30 +33,22 @@ public class ActionLogicEl implements ActionListener{
 				if (razPok < 0) throw new ExceptionMinus();
 				else if (razPok <= 100) {
 					sumEl = BigDecimal.valueOf(razPok * tarifEl_100).setScale(2, BigDecimal.ROUND_HALF_UP);
-					parent.textFieldElRazn.setText(String.valueOf(razPok));
-					parent.textFieldElSum.setText(String.valueOf(sumEl));
-					parent.sumRezCalc();
+					writeResult();
 					return;
 				} 
 				else if(parent.chckbx_1.isSelected() & !parent.chckbx_2.isSelected()){
 					sumEl = BigDecimal.valueOf((STOx2 * tarifEl_100) + ((razPok - STOx2) * tarifEl_101)).setScale(2, BigDecimal.ROUND_HALF_UP);
-					parent.textFieldElRazn.setText(String.valueOf(razPok));
-					parent.textFieldElSum.setText(String.valueOf(sumEl));
-					parent.sumRezCalc();
+					writeResult();
 					return;
 				}
 				else if(parent.chckbx_2.isSelected()){
 					sumEl = BigDecimal.valueOf((STOx3 * tarifEl_100) + ((razPok - STOx3) * tarifEl_101)).setScale(2, BigDecimal.ROUND_HALF_UP);
-					parent.textFieldElRazn.setText(String.valueOf(razPok));
-					parent.textFieldElSum.setText(String.valueOf(sumEl));
-					parent.sumRezCalc();
+					writeResult();
 					return;
 				}
 				else {
 					sumEl = BigDecimal.valueOf((STO * tarifEl_100) + ((razPok - STO) * tarifEl_101)).setScale(2, BigDecimal.ROUND_HALF_UP);
-					parent.textFieldElRazn.setText(String.valueOf(razPok));
-					parent.textFieldElSum.setText(String.valueOf(sumEl));
-					parent.sumRezCalc();
+					writeResult();
 				}
 			}
 		} catch (ExceptionMinus err) {
@@ -65,6 +57,12 @@ public class ActionLogicEl implements ActionListener{
 			JOptionPane.showConfirmDialog(null,"В поля показания необходимо вводить число",	"Неверный ввод данных", JOptionPane.PLAIN_MESSAGE);
 		}
 
+	}
+
+	private void writeResult() {
+		parent.textFieldElRazn.setText(String.valueOf(razPok));
+		parent.textFieldElSum.setText(String.valueOf(sumEl));
+		parent.sumRezCalc();
 	}
 
 }

@@ -52,13 +52,17 @@ public class ActionWriteButton implements ActionListener{
 //			Электричество
 			fw.write(smlRazrel);
 			fw.write(parent.label_2.getText()+'\n');
-			fw.write(space6 + "Тариф до 100 кВт" + " - " + parent.tarif("Электричество до 100 кВт") +" грн."+'\n');
+			fw.write(space6 + "Предыдущие показания: " + parent.textFieldElPredPok.getText() + '\n');
+			fw.write(space6 + "Настоящие показания: " + parent.textFieldElNewPok.getText() + '\n');
+			fw.write(space6 + "Тариф до 100 кВт" + " - " + parent.tarif("Электричество до 100 кВт") +" грн."+ '\n');
 			fw.write(space6 + "Тариф более 100 кВт" + " - " + parent.tarif("Электричество более 100 кВт") +" грн."+'\n');
 			fw.write(space6 +"Потребленно: " + parent.textFieldElRazn.getText() + " кВт" + "  На сумму " + parent.textFieldElSum.getText() + " грн."+'\n');
 
 //			Вода
 			fw.write(smlRazrel);
 			fw.write(parent.lblNewLabel_4.getText()+'\n');
+			fw.write(space6 + "Предыдущие показания: " + parent.textFieldWaterPredPok.getText() + '\n');
+			fw.write(space6 + "Настоящие показания: " + parent.textFieldWaterNewPok.getText() + '\n');
 			fw.write(space6 + "Тариф: " + " - " + parent.tarif("Вода") +" грн/куб.м"+'\n');
 			fw.write(space6 + "Потребленно: " + parent.textFieldWaterRaz.getText() + " куб.м" + "  На сумму " + parent.textFieldWaterSum.getText() + " грн."+'\n');
 //			Квартира

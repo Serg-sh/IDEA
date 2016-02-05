@@ -142,7 +142,7 @@ public class Window {
 		
 		
 		frmVbeta.setType(Type.POPUP);
-		frmVbeta.setTitle("\u041A\u043E\u043C\u043C\u0443\u043D\u0430\u043B\u043A\u0430 v1.0_beta");
+		frmVbeta.setTitle("\u041A\u043E\u043C\u043C\u0443\u043D\u0430\u043B\u043A\u0430 v1.0.3");
 		frmVbeta.setSize(new Dimension(800, 600));
 		frmVbeta.setResizable(false);
 		frmVbeta.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
