@@ -208,7 +208,6 @@ public class MainController {
             else {
                 countBigPotdon = (int) ((volume) / VOLUME_BIG_POTDON);
                 volume -= VOLUME_BIG_POTDON * countBigPotdon;
-                System.out.println(volume);
                 calcCountPotdon(volume);
 
             }
