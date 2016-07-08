@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="VolumeDFZ:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/VolumeDFZ_jar</output-path>
+    <root id="archive" name="VolumeDFZ.jar">
+      <element id="module-output" name="VolumeDFZ" />
+    </root>
+  </artifact>
+</component>
