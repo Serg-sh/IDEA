@@ -141,7 +141,7 @@ public class MainController {
         } catch (NullPointerException e) {
             DialogManager.showInfoDialog("Ошибка!", "Выберите наименование");
         } catch (NumberFormatException e) {
-            DialogManager.showInfoDialog("Ошибка!", "Укажите количество коробок");
+            DialogManager.showInfoDialog("Ошибка!", "Укажите количество предметов");
         }
 
 
