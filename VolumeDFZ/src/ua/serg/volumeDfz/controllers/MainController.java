@@ -20,6 +20,8 @@ public class MainController {
     @FXML
     private TableColumn<MyBox, String> tableColName;
     @FXML
+    private TableColumn<MyBox, Integer> tableColNumOfSubject;
+    @FXML
     private TableColumn<MyBox, Integer> tableColCount;
     @FXML
     private TableColumn<MyBox, Double> tableColVolume;
@@ -48,7 +50,7 @@ public class MainController {
     private CollectionMyBoxImpl listMyBoxName = new CollectionMyBoxImpl();
 
     private CollectionMyBoxImpl listMyBox = new CollectionMyBoxImpl();
-    private  Double koef = 0.95;
+    private Double koef = 0.95;
     private final Double VOLUME_BIG_POTDON = 1.44 * koef;
     private final Double VOLUME_SMAL_POTDON = 0.48 * koef;
 
@@ -59,48 +61,48 @@ public class MainController {
 
     private void createListMyBox() {
 
-        listMyBoxName.add(new MyBox("Блюдце під чашку еспресо 90мл, FARN 135 мм", 118, 136));
-        listMyBoxName.add(new MyBox("Блюдце під кавову чашку 200мл, FARN 155 мм", 120, 158));
-        listMyBoxName.add(new MyBox("Блюдце під чайну та бульйонну чашку, FARN 160 мм ", 133, 162));
-        listMyBoxName.add(new MyBox("Миска 130 мм", 112, 268));
-        listMyBoxName.add(new MyBox("Миска 145 мм", 134, 295));
-        listMyBoxName.add(new MyBox("Салатник 140 мм", 133, 143));
-        listMyBoxName.add(new MyBox("Салатник 160 мм", 157, 161));
-        listMyBoxName.add(new MyBox("Тарілка дрібна 17см з бортом, FARN 170 мм", 113, 172));
-        listMyBoxName.add(new MyBox("Тарілка дрібна 19см з бортом, FARN 190 мм", 118, 192));
-        listMyBoxName.add(new MyBox("Тарілка дрібна 21см з бортом, FARN 210 мм", 134, 213));
-        listMyBoxName.add(new MyBox("Тарілка дрібна 24,5см з бортом, FARN 245 мм", 76, 248));
-        listMyBoxName.add(new MyBox("Тарілка дрібна 26,5см з бортом, FARN 265 мм", 88, 267));
-        listMyBoxName.add(new MyBox("Тарілка дрібна 28см з бортом, FARN 280 мм", 58, 282));
-        listMyBoxName.add(new MyBox("Тарілка глибока 24см з бортом, FARN 240 мм", 95, 244));
-        listMyBoxName.add(new MyBox("Тарілка глибока Паста, 30см, FARN 300 мм", 76, 304));
-        listMyBoxName.add(new MyBox("Тарілка для Піци, 32см, FARN 320 мм", 40, 325));
-        listMyBoxName.add(new MyBox("Блюдо овал, вузький борт, 25см, FARN 250 мм", 77, 197));
-        listMyBoxName.add(new MyBox("Блюдо овал, вузький борт, 29см, FARN (290*220) 290 мм", 83, 222));
-        listMyBoxName.add(new MyBox("Блюдо овал, вузький борт, 33см, FARN (330*255) 330 мм", 96, 258));
-        listMyBoxName.add(new MyBox("Блюдо овал, широкий борт, 32см, FARN 320 мм", 90, 210));
-        listMyBoxName.add(new MyBox("Блюдо овал, широкий борт, 38см, FARN 380 мм", 100, 260));
-        listMyBoxName.add(new MyBox("Блюдо для лазаньї, 25,5см, FARN 255 мм", 95, 261));
-        listMyBoxName.add(new MyBox("Блюдо для лазаньї, 28см, FARN 277 мм", 122, 293));
-        listMyBoxName.add(new MyBox("Блюдо овальне, 17,5см, FARN (175*100) 175 мм", 70, 100));
-        listMyBoxName.add(new MyBox("Блюдо овальне, 24,5см, FARN ( 245*140) 245 мм", 110, 140));
-        listMyBoxName.add(new MyBox("Чашка 90мл для еспресо, FARN 90 мл", 94, 218));
-        listMyBoxName.add(new MyBox("Чашка 200мл для кави, FARN 200 мл", 116, 176));
-        listMyBoxName.add(new MyBox("Чашка 250мл для чаю та кави, FARN 250 мл", 125, 206));
-        listMyBoxName.add(new MyBox("Бульйонниця з ручками, 320мл, FARN 320 мл", 125, 228));
-        listMyBoxName.add(new MyBox("Соуcник порційний 50мл, FARN 50 мл", 110, 210));
-        listMyBoxName.add(new MyBox("Соуcник порційний 100мл, FARN 100 мл", 90, 210));
-        listMyBoxName.add(new MyBox("Молочник  50мл, FARN 50 мл", 100, 200));
-        listMyBoxName.add(new MyBox("Молочник  110мл, FARN 110 мл", 140, 220));
-        listMyBoxName.add(new MyBox("Молочник  250мл, FARN 250 мл", 95, 240));
-        listMyBoxName.add(new MyBox("Цукорниця з кришкою, 200мл, FARN 200 мл", 150, 200));
-        listMyBoxName.add(new MyBox("Заварник 450мл для чаю, FARN 450 мл", 110, 210));
-        listMyBoxName.add(new MyBox("Заварник 600мл для чаю, FARN 600 мл", 130, 230));
-        listMyBoxName.add(new MyBox("Заварник 900мл для чаю, FARN 900 мл", 140, 250));
-        listMyBoxName.add(new MyBox("Набір для спецій FARN, (4 предмета)", 95, 150));
-        listMyBoxName.add(new MyBox("Попільничка кругла 10см, FARN 100 мм", 140, 200));
-        listMyBoxName.add(new MyBox("Підставка під яйце 15см, FARN 130 мм", 150, 150));
-        listMyBoxName.add(new MyBox("Серветниця, FARN", 80, 150));
+        listMyBoxName.add(new MyBox("Блюдце для чашки эспрессо 135 мм", 280, 145, 120, 24));
+        listMyBoxName.add(new MyBox("Блюдце для чашки кофе 155 мм", 325, 170, 120, 24));
+        listMyBoxName.add(new MyBox("Блюдце для чашки чая и бульона 160 мм ", 335, 170, 130, 24));
+        listMyBoxName.add(new MyBox("Миска 130 мм", 280, 280, 110, 24));
+        listMyBoxName.add(new MyBox("Миска 145 мм", 300, 300, 140, 24));
+        listMyBoxName.add(new MyBox("Салатник 140 мм", 290, 160, 135, 24));
+        listMyBoxName.add(new MyBox("Салатник 160 мм", 170, 170, 160, 12));
+        listMyBoxName.add(new MyBox("Тарелка мелкая с широким бортом 170 мм", 180, 180, 125, 12));
+        listMyBoxName.add(new MyBox("Тарелка мелкая с широким бортом 190 мм", 200, 200, 120, 12));
+        listMyBoxName.add(new MyBox("Тарелка мелкая с широким бортом 210 мм", 220, 220, 140, 12));
+        listMyBoxName.add(new MyBox("Тарелка мелкая с широким бортом 245 мм", 255, 255, 80, 6));
+        listMyBoxName.add(new MyBox("Тарелка мелкая с широким бортом 265 мм", 280, 280, 90, 6));
+        listMyBoxName.add(new MyBox("Тарелка мелкая с широким бортом 280 мм", 290, 290, 90, 6));
+        listMyBoxName.add(new MyBox("Тарелка глубокая с широким бортом 240 мм", 250, 250, 100, 6));
+        listMyBoxName.add(new MyBox("Тарелка глубокая \"Паста\" 300 мм", 310, 310, 85, 3));
+        listMyBoxName.add(new MyBox("Тарелка плоская \"Пицца\" 320 мм", 330, 330, 45, 3));
+        listMyBoxName.add(new MyBox("Блюдо овальное с узким бортом (250*20) 250 мм", 250, 200, 80, 6));
+        listMyBoxName.add(new MyBox("Блюдо овальное с узким бортом (290*22) 290 мм", 290, 220, 85, 6));
+        listMyBoxName.add(new MyBox("Блюдо овальное с узким бортом (330*25) 330 мм", 330, 255, 90, 6));
+        listMyBoxName.add(new MyBox("Блюдо овальное с широким бортом 320 мм", 320, 210, 100, 6));
+        listMyBoxName.add(new MyBox("Блюдо овальное с широким бортом 380 мм", 380, 270, 100, 6));
+        listMyBoxName.add(new MyBox("Блюдо для лазаньи 255 мм", 255, 130, 80, 6));
+        listMyBoxName.add(new MyBox("Блюдо для лазаньи 277 мм", 270, 140, 110, 6));
+        listMyBoxName.add(new MyBox("Селедочник (175*100) 175 мм", 175, 100, 80, 6));
+        listMyBoxName.add(new MyBox("Селедочник (245*140) 245 мм", 245, 140, 100, 6));
+        listMyBoxName.add(new MyBox("Чашка для эспрессо (стэк) 90 мл", 340, 220, 95, 24));
+        listMyBoxName.add(new MyBox("Чашка для кофе (стэк) 200 мл", 310, 200, 125, 12));
+        listMyBoxName.add(new MyBox("Чашка для чая (стэк) 250 мл", 320, 220, 150, 12));
+        listMyBoxName.add(new MyBox("Чашка для бульона 320 мл", 360, 235, 160, 12));
+        listMyBoxName.add(new MyBox("Соусник 50 мл", 310, 210, 110, 36));
+        listMyBoxName.add(new MyBox("Соусник 100 мл", 300, 225, 95, 24));
+        listMyBoxName.add(new MyBox("Молочник 50 мл", 320, 220, 100, 48));
+        listMyBoxName.add(new MyBox("Молочник 110 мл", 290, 220, 140, 24));
+        listMyBoxName.add(new MyBox("Молочник 250 мл", 310, 240, 95, 12));
+        listMyBoxName.add(new MyBox("Сахарница с крышкой 200 мл", 320, 220, 150, 12));
+        listMyBoxName.add(new MyBox("Чайник с крышкой 450 мл", 370, 240, 140, 6));
+        listMyBoxName.add(new MyBox("Чайник с крышкой 600 мл", 370, 240, 120, 6));
+        listMyBoxName.add(new MyBox("Чайник с крышкой 900 мл", 305, 285, 135, 4));
+        listMyBoxName.add(new MyBox("Набор для специй (4 предмета)", 210, 150, 70, 6));
+        listMyBoxName.add(new MyBox("Пепельница 100 мм", 305, 210, 110, 24));
+//        listMyBoxName.add(new MyBox("Подставка для яйца 130 мм", 0,0,0,6));
+        listMyBoxName.add(new MyBox("Салфетница", 210, 150, 70, 6));
 
     }
 
@@ -115,7 +117,8 @@ public class MainController {
         cbName.setPromptText("Выберите наименование...");
         cbName.setItems(listMyBoxName.getListName());
         tableColName.setCellValueFactory(new PropertyValueFactory<MyBox, String>("name"));
-        tableColCount.setCellValueFactory(new PropertyValueFactory<MyBox, Integer>("count"));
+        tableColNumOfSubject.setCellValueFactory(new PropertyValueFactory<MyBox, Integer>("numberOfSubject"));
+        tableColCount.setCellValueFactory(new PropertyValueFactory<MyBox, Integer>("countBox"));
         tableColVolume.setCellValueFactory(new PropertyValueFactory<MyBox, Double>("volume"));
         tableView.setItems(listMyBox.getListMyBox());
         labelKoef.setText("Коэффициент заполнения: " + String.valueOf(koef * 100 + "%"));
@@ -127,7 +130,7 @@ public class MainController {
     public void actionAdd(ActionEvent actionEvent) {
         try {
             MyBox tmpMyBox = listMyBoxName.getMyBox(cbName.getSelectionModel().getSelectedItem());
-            tmpMyBox.setCount(Integer.valueOf(txtCount.getText()));
+            tmpMyBox.setNumberOfSubject(Integer.valueOf(txtCount.getText()));
 
 
             if (listMyBox.contains(tmpMyBox)) {
@@ -199,13 +202,12 @@ public class MainController {
 
         } else if (volume > VOLUME_BIG_POTDON) {
             if (countBigPotdon > 0) {
-                countBigPotdon += (int) (volume  / VOLUME_BIG_POTDON);
+                countBigPotdon += (int) (volume / VOLUME_BIG_POTDON);
                 volume -= VOLUME_BIG_POTDON * countBigPotdon;
                 calcCountPotdon(volume);
 
 
-            }
-            else {
+            } else {
                 countBigPotdon = (int) ((volume) / VOLUME_BIG_POTDON);
                 volume -= VOLUME_BIG_POTDON * countBigPotdon;
                 calcCountPotdon(volume);

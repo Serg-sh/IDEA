@@ -21,7 +21,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("Расчет кол-ва потдонов");
         primaryStage.setMinHeight(400);
-        primaryStage.setMinWidth(600);
+        primaryStage.setMinWidth(650);
         primaryStage.setScene(new Scene(fxmlMain));
         primaryStage.show();
 

@@ -9,16 +9,24 @@ public class MyBox {
 
     private SimpleStringProperty name = new SimpleStringProperty("");
     private Double volume;
-    private Integer count = 1;
+    private Integer countBox;
+    private Integer countInBox;
+    private Integer numberOfSubject;
     private int x;
     private int y;
     private int z;
 
-    public MyBox(String name, int z, int x) {
+
+    private MyBox(){
+
+    }
+
+    public MyBox(String name, int x, int y, int z, Integer countInBox) {
         this.name = new SimpleStringProperty(name);
         this.x = x;
-        this.y = x;
+        this.y = y;
         this.z = z;
+        this.countInBox = countInBox;
         this.volume = Double.valueOf(x*y*z);
     }
 
@@ -27,16 +35,23 @@ public class MyBox {
     }
 
     public Double getVolume() {
-        return volume * count / 1_000;
+        return volume * countBox / 1_000;
     }
 
-    public Integer getCount() {
-        return count;
+    public Integer getCountBox() {
+        return countBox;
     }
 
-    public void setCount(Integer count) {
-        this.count = count;
+    private void setCountBox() {
+        this.countBox = numberOfSubject/countInBox +1;
     }
 
+    public void setNumberOfSubject(Integer numberOfSubject) {
+        this.numberOfSubject = numberOfSubject;
+        setCountBox();
+    }
 
+    public Integer getNumberOfSubject() {
+        return numberOfSubject;
+    }
 }

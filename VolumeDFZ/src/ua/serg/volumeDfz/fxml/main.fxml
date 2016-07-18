@@ -21,11 +21,12 @@
       </AnchorPane>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="151.0" prefWidth="603.0" VBox.vgrow="ALWAYS">
          <children>
-            <TableView fx:id="tableView" layoutX="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="168.0" prefWidth="576.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="tableView" layoutX="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="168.0" prefWidth="601.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
               <columns>
                 <TableColumn fx:id="tableColNum" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" resizable="false" text="№" />
-                <TableColumn fx:id="tableColName" minWidth="410.0" prefWidth="410.0" text="Наименование" />
-                  <TableColumn fx:id="tableColCount" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="Кол-во" />
+                <TableColumn fx:id="tableColName" minWidth="300.0" prefWidth="300.0" text="Наименование" />
+                  <TableColumn fx:id="tableColNumOfSubject" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" text="Кол-во пр-ов" />
+                  <TableColumn fx:id="tableColCount" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" text="Кол-во кор-к" />
                   <TableColumn fx:id="tableColVolume" maxWidth="85.0" minWidth="85.0" prefWidth="85.0" resizable="false" text="Объем см^3" />
               </columns>
                <columnResizePolicy>
